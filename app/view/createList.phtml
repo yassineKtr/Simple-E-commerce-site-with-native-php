@@ -1,0 +1,84 @@
+<?php include $config['VIEW_PATH'] . 'headers' . DS . 'header.phtml'?>
+
+
+<div class="container my-5">
+    <div class="row">
+       <h2>New listing</h2>
+    </div>
+    <hr class="mt-2 mb-3">
+    <div class="row">
+        <div class="col-lg-8 pb-5">
+            <form class="row" method="POST" enctype="multipart/form-data">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Product name</label>
+                        <input class="form-control" type="text" id="account-fn" placeholder="Name..." name="prodName">
+                    </div>
+                </div>
+                
+                <div class="col-md-2"> 
+                    <div class="form-group">
+                        <label for="account-email">Price</label>
+                            <div class="input-group ">
+                                <input type="text" class="form-control"  name="prodPrice">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">$</span>
+                                </div>
+                            </div>
+                    </div>    
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="account-pass">Product description</label>
+                        <textarea name="Proddescription" class="form-control" aria-label="Enter a description"></textarea>
+                    </div>
+                    
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Product categorie</label>
+                        <select  class="form-control" name="categorie">
+                            <option value="nothing" selected>----SELECT A CATEGORIE----</option>
+                            <option value="IT">Telecommunications and Computing</option>
+                            <option value="CM">Chemicals and Materials</option>
+                            <option value="AT">Automotive and Transport</option>
+                            <option value="BF">Business and Finance</option>
+                            <option value="FB">Food and Beverage</option>
+                            <option value="E">Electronics</option>
+                            
+                            
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="prodPics">Choose an image</label>
+                       
+                            <input type="file" class=" form-control btn btn-outline-dark " id="customFile" name="prodPic">
+                        
+                    </div>
+                </div>
+                           
+
+                           
+
+                <div class="col-12">
+                    <?php displayError() ?>
+                    
+                    <div class="d-flex flex-wrap justify-content-between align-items-center">
+                        <button class="btn btn-style-1 btn-primary" type="submit" name="list">Create listing</button>
+                        <a class="btn btn-style-1 btn-secondary"  href="?page=listings" >Cancel</a>
+                    </div>
+                    
+                </div>
+                
+            </form>
+
+        </div>
+    </div>
+    <hr class="mt-2 mb-3">
+</div>
+
+
+<?php include $config['VIEW_PATH'] . 'footers' . DS . 'footer.phtml'?>

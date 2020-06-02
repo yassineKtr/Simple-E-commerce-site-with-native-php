@@ -1,0 +1,58 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Login</title>
+    
+    <link rel="shortcut icon" href="img/favicon.ico" type= “image/x-icon”>
+    
+    <style>
+       .form-signin {
+            width: 100%;
+            max-width: 330px;
+            padding: 15px;
+            margin: auto;
+        }
+        body {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #43464B;
+        }
+        html, body {
+            height: 100%;
+        }
+    </style>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+  </head>
+  <body class="text-center">
+    <form class="form-signin" method="POST">
+      
+      <img class="mb-4" src="img/store.png" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <label for="inputEmail" class="sr-only">Email address / User name</label>
+      <input  id="inputEmail" class="form-control" placeholder="Email address / Username" name="mailUid"  autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="pass" >
+      <?php displayError() ?>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Login</button>
+      <label >if you don't have an account...</label>
+      <button class="btn btn-lg btn-secondary btn-block" type="submit" name="signup">Sign up</button>
+      
+      
+      <p class="mt-5 mb-3 text-muted">&copy; yassineKtr</p>
+    </form>
+
+
+
+  </body>
+</html>

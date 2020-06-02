@@ -1,0 +1,98 @@
+
+<?php include $config['VIEW_PATH'] . 'headers' . DS . 'header.phtml'?>
+
+<!-- --------------------------------------------------------------------------------- -->
+
+<div class="container">
+
+    
+
+
+        <h1 class="my-4">My shop</h1>
+        <div class="dropdown show pb-5">
+            <a class="btn btn-info dropdown-toggle btn-lg" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <?php echo categorieName(get('categorie', 'Categorie')); ?>
+            </a>
+            <div class="dropdown-menu">
+                <h6 class="dropdown-header">-----choose categorie-----</h6>
+                <a href="?page=home" class="dropdown-item ">ALL</a>
+                <a href="?page=home&categorie=IT" class="dropdown-item <?php echo activeCatg('IT'); ?>">Telecommunications and Computing </a>
+                <a href="?page=home&categorie=CM" class="dropdown-item <?php echo activeCatg('CM');  ?>">Chemicals and Materials</a>
+                <a href="?page=home&categorie=AT" class="dropdown-item <?php echo activeCatg('AT');  ?>">Automotive and Transport</a>
+                <a href="?page=home&categorie=BF" class="dropdown-item <?php echo activeCatg('BF'); ?>">Business and Finance</a>
+                <a href="?page=home&categorie=FB" class="dropdown-item <?php echo activeCatg('FB');  ?>">Food and Beverage</a>
+                <a href="?page=home&categorie=E" class="dropdown-item <?php echo activeCatg('E');  ?>">Electronics</a>
+            </div>
+        </div>
+
+     
+
+        
+
+
+            
+            <div class="row">
+                <?php
+                if(!$emptylisting){
+                    foreach($listingResult as $item){
+                        echo'
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="card h-100">
+                                <a href="#"><img class="card-img-top" src="' .  fileWithExt($item['pic']) . '" alt="" height="250" width="50"></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                    <a href="#">' . $item['prodName'] . '</a>
+                                    </h4>
+                                    <h5>$' . filterPrice($item['prodPrice']) . '</h5>
+                                    <p class="card-text">' . $item['prodDescription'] . '</p>
+                                    <a href="?page=cart&cartItem=' . $item['prodId'] . '" class="btn btn-primary">Add to cart</a>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                                </div>
+                                </div>
+                            </div>
+                        ';
+                    }
+                }else{
+                    echo '
+                    <div class="alert alert-warning col-lg-8" role="alert">
+                        <h3>No matching items ...</h3>
+                    </div>
+                    ';
+                }
+                ?>
+
+                
+            </div>
+            <!-- /.row -->
+
+    
+      
+
+    
+    
+
+</div>
+  <!-- /.container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- --------------------------------------------------------------------------------- -->
+
+
+<?php include $config['VIEW_PATH'] . 'footers' . DS . 'footer.phtml'?>
+
+	
+
+

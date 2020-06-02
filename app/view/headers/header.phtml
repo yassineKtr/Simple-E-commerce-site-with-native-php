@@ -1,0 +1,77 @@
+<?php 
+	if (!isset($_SESSION['userId'])) {
+        header("location:?page=login");
+    }
+?>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><?php echo $userType;?> Home</title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<link rel="shortcut icon" href="img/favicon.ico" type= “image/x-icon”>
+		<link rel="stylesheet " href="style.css" >
+
+	</head>
+	<body>
+		<div id="container">
+			<div id="main">
+				<nav class="navbar navbar-expand-lg navbar-light bg-light">
+					<a class="navbar-brand" href="?page=home"><img  src="img/store.png" alt="" width="42" height="42"></a>
+					
+
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item active">
+								<a class="nav-link" href="?page=home">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">About</a>
+							</li>
+
+							<li class="nav-item">
+								<a class="nav-link" href="?page=cart"><img  src="img/cart.png" alt="" width="28" height="28"></a>
+							</li>
+			
+						</ul>
+						<!-- the search bar -->
+						<form class="form-inline" method="POST" >
+							<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="searchContent">
+							<button type="submit" class="btn btn-outline-dark my-sm-0" name="search" >Search</button>
+						</form>
+							
+							<!-- this is the part where we display the user name with php -->
+							<h4 class="ml-auto">
+								<span class="badge badge-light ">
+									<?php echo $userUid . "/" . $userType ?>
+								</span>
+							</h4>
+							
+							
+							<ul class="navbar-nav ">
+								<div class="dropdown">
+									<button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<img src="img/user.png" width="22" height="22" >
+									</button>
+									<div class="dropdown-menu dropdown-menu-right multi-level" aria-labelledby="dropdownMenuButton">
+										<a class="dropdown-item" href="?page=accountSet">Account settings</a>
+										<!-- incase user is admin this is to controll his items -->
+										<?php 
+										if($userType=='admin'){
+											echo '
+												<a class="dropdown-item" href="?page=listings">Manage listings</a> 
+											';
+											}
+										?>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="?page=logout">Logout</a>
+									</div>
+								</div>
+							</ul>
+						
+					</div>
+				</nav>

@@ -1,0 +1,113 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<title>Sign up</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<head>
+		<script src="jquery/jquery.min.js"></script>
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		
+		<link rel="stylesheet" href="css/style.css">
+
+		<script src="js/bootstrap.min.js"></script>
+		
+		<link rel="icon" href="images/icon.png" type="image/x-icon" />
+		
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+    <style>
+       .form-signin {
+            width: 100%;
+            max-width: 330px;
+            padding: 15px;
+            margin: auto;
+        }
+        body {
+            display: -ms-flexbox;
+            display: flex inline;
+            -ms-flex-align: center;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+        html, body {
+            height: 100%;
+        }
+    </style>
+
+
+
+	</head>
+
+
+
+	<body >
+    <img class="mb-4 mx-auto d-block" src="img/store.png" alt="" width="72" height="72">
+	<div class="container-fluid">
+		<div class="container">
+
+			<h2 class="text-center" id="title">Welcome new user</h2>
+			 
+ 			<hr>
+			<div class="row">
+				<div class="col-md-5">
+ 					<form role="form" method="post" action="" class="form-signin">
+                     
+						<fieldset>							
+							<p class="text-uppercase pull-center text-secondary"> SIGN UP</p>	
+ 							<div class="form-group">
+								<input type="text" name="username" id="username" class="form-control input-lg" placeholder="username">
+							</div>
+
+							<div class="form-group">
+								<input type="text" name="email" id="email" class="form-control input-lg" placeholder="Email Address">
+							</div>
+                            <div  class="form-group">
+                                <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
+                            </div>
+                            <div class="form-group login-group-checkbox">
+                                <input type="radio" class="" name="userType" value="admin">
+                                <label >Admin</label>
+                                
+                                <input type="radio" class="" name="userType" value="client">
+                                <label >Client</label>
+                            </div>
+							<?php displayError() ?>
+							<div class="form-group">
+								
+							
+                                <div class="form-check">
+                                    <label class="form-check-label small">
+                                    
+                                    By Clicking "sign up" you agree to our <a href="?page=policie" target="_blank" >policy & terms</a>
+                                    </label>
+                                </div>
+ 							<div>
+ 								<input type="submit" class="btn btn-lg btn-primary"   value="Sign up" name="register">
+ 							</div>
+						</fieldset>
+                        <p class="mt-5 mb-3 text-muted">&copy; yassineKtr</p>
+					</form>
+				</div>
+				
+				
+			</div>
+		</div>
+		
+	</div>
+	
+	</body>
+	 
+
+</html>

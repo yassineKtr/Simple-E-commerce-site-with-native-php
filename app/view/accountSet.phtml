@@ -1,0 +1,66 @@
+<?php include $config['VIEW_PATH'] . 'headers' . DS . 'header.phtml'?>
+
+
+<div class="container my-5">
+    <div class="row">
+       <h2>Change account info</h2>
+    </div>
+    <hr class="mt-2 mb-3">
+    <div class="row">
+        <div class="col-lg-8 pb-5">
+            <form class="row" method="POST">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="account-fn">Username</label>
+                        <input class="form-control" type="text" id="account-fn" placeholder="New username" name="username">
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="account-email">E-mail Address</label>
+                        <input class="form-control"  id="account-email" placeholder="Enter new Email" name="email" >
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="account-pass">New Password</label>
+                        <input class="form-control" type="password" id="account-pass" name="password" placeholder="Enter new password">
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="account-confirm-pass">Confirm new password</label>
+                        <input class="form-control" type="password" id="account-confirm-pass" name="passwordConf" placeholder="Confirm new password">
+                    </div>
+                </div>
+                            <div class="form-group login-group-checkbox">
+                                <input type="radio" class="" name="userType" value="admin">
+                                <label >Admin</label>
+                                
+                                <input type="radio" class="" name="userType" value="client">
+                                <label >Client</label>
+                            </div>
+
+                           
+
+                <div class="col-12">
+                    <?php displayError() ?>
+                    <hr class="mt-2 mb-3">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center">
+                        <button class="btn btn-style-1 btn-primary" type="submit" name="update">Update Profile</button>
+                        <a class="btn btn-style-1 btn-secondary"  href="?page=home" >Cancel</a>
+                    </div>
+                    
+                </div>
+            </form>
+
+        </div>
+    </div>
+    
+</div>
+
+<?php include $config['VIEW_PATH'] . 'footers' . DS . 'footer.phtml'?>
+

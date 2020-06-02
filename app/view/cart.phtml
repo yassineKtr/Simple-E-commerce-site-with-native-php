@@ -1,0 +1,59 @@
+<?php include $config['VIEW_PATH'] . 'headers' . DS . 'header.phtml'?>
+
+<div class="container">
+        <div class="table-wrapper pt-5">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>Cart <b>Items</b></h2></div>
+                    
+                </div>
+            </div>
+            <table class="table table-hover  ">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Categorie</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <?php 
+                        if(!empty($_SESSION['cart'])){
+                            foreach($_SESSION['cart'] as $item){
+                                echo '<tr>';
+                                echo '  <td>' . $item['prodName'] . '</td>';
+                                echo '  <td>' . filterPrice($item['prodPrice']) . ' $ </td>';
+                                echo '  <td>' . $item['prodDescription'] . '</td>';
+                                echo '  <td>' . categorieName($item['categorie']) . '</td>';
+                                echo '  <td><img src="' .  fileWithExt($item['pic']) . '" height="50" width="100"></td>';
+                                echo '  <td><a href="?page=cart&del=' . $item['prodId'] . '" class="btn btn-danger">Remove</a></td>';   
+                                
+                                echo '</tr>';
+                            }
+                            echo '  <td><a href="?page=checkout" class="btn btn-dark   btn-block">Proceed to check out</a></td>';
+                         }
+                    ?>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php include $config['VIEW_PATH'] . 'footers' . DS . 'footer.phtml'?>
